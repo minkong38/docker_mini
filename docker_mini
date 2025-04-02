@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx:
+    image: jjeong:sky
+    deploy:
+      replicas: 3
+      placement:
+        constraints: [ node.role == worker]
+    volumes:
+      - nginx_vol:/usr/share/nginx/html
+    ports:
+      - "8925:80"
+    networks:
+      - nginx_net
+
+networks:
+  nginx_net:
+    driver: overlay
+    attachable: true
