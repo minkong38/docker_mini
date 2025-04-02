@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   nginx:
-    image: jjeong:sky
+    image: 211.183.3.200:5000/jjeong:sky
     deploy:
       replicas: 3
       placement:
